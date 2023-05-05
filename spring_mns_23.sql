@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 04 mai 2023 à 09:29
+-- Généré le : ven. 05 mai 2023 à 07:07
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -30,9 +30,9 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `entreprise`;
 CREATE TABLE IF NOT EXISTS `entreprise` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nom` varchar(255) DEFAULT NULL,
+  `nom` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `entreprise`
@@ -53,9 +53,9 @@ INSERT INTO `entreprise` (`id`, `nom`) VALUES
 DROP TABLE IF EXISTS `job`;
 CREATE TABLE IF NOT EXISTS `job` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nom` varchar(255) DEFAULT NULL,
+  `nom` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `job`
@@ -76,9 +76,9 @@ INSERT INTO `job` (`id`, `nom`) VALUES
 DROP TABLE IF EXISTS `pays`;
 CREATE TABLE IF NOT EXISTS `pays` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nom` varchar(255) DEFAULT NULL,
+  `nom` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `pays`
@@ -99,9 +99,9 @@ INSERT INTO `pays` (`id`, `nom`) VALUES
 DROP TABLE IF EXISTS `role`;
 CREATE TABLE IF NOT EXISTS `role` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nom` varchar(255) DEFAULT NULL,
+  `nom` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `role`
@@ -123,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `user_job` (
   `job_id` int NOT NULL,
   PRIMARY KEY (`utilisateur_id`,`job_id`),
   KEY `FKia2o1pm0plymfbt26ps56ox5l` (`job_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `user_job`
@@ -143,11 +143,11 @@ DROP TABLE IF EXISTS `utilisateur`;
 CREATE TABLE IF NOT EXISTS `utilisateur` (
   `id` int NOT NULL AUTO_INCREMENT,
   `created_date` date DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `image_name` varchar(255) DEFAULT NULL,
-  `nom` varchar(255) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL,
-  `prenom` varchar(255) DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `image_name` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `nom` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `prenom` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `updated_date` datetime(6) DEFAULT NULL,
   `entreprise_id` int DEFAULT NULL,
   `pays_id` int DEFAULT NULL,
@@ -156,7 +156,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   KEY `FK8fjtucbyo2t6agaejym2j764f` (`entreprise_id`),
   KEY `FKc1g8do1rrrp4bwytrl73elnou` (`pays_id`),
   KEY `FKaqe8xtajee4k0wlqrvh2pso4l` (`role_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `utilisateur`
