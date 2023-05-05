@@ -15,6 +15,5 @@ public interface UtilisateurDao extends JpaRepository<Utilisateur, Integer> {
 
     Optional<Utilisateur> findByEmail(String Email);
 
-    @Query("FROM Utilisateur U JOIN U.pays P WHERE P.nom = $1")
-    List<Utilisateur> utilisateurFromPays(String pays);
+
 }
